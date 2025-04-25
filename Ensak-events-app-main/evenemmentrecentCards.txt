@@ -1,0 +1,48 @@
+ <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Évènements Récents</h2>
+          <p>Jetez Un Coup D'oeil Aux Dérniers Évenènements !  </p>
+        </div>
+
+        <div class="row">
+        <?php
+          // Boucle pour afficher les événements récents
+          while ($row_recent = $result_recent->fetch_assoc()) {
+              echo '<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">';
+              echo '<div class="icon-box" data-aos="fade-up" data-aos-delay="100">';
+              echo '<div class="icon"><i class="' . $categories_icons[$row_recent['categorie']] . '" style="color:' . $categorie_colors[$row_recent['categorie']] . ';"></i></div>';
+              echo '<h4 class="title"><a href="' . $row_recent['url'] . '">' . $row_recent['titre'] . '</a></h4>';
+              echo '<p class="description">' . $row_recent['description'] . '</p>';
+              echo '</div>';
+              echo '</div>';
+          }
+          ?>
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+
+
+<section id="services" class="services">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Évènements à Venir</h2>
+          <p>N'en Ratez Aucun !</p>
+        </div>
+        <div class="row">
+        <?php
+          // Boucle pour afficher les événements à venir
+          while ($row = $result->fetch_assoc()) {
+              echo '<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">';
+              echo '<div class="icon-box" data-aos="fade-up" data-aos-delay="100">';
+              echo '<div class="icon"><i class="' . $categories_icons[$row['categorie']] . '" style="color:' . $categorie_colors[$row['categorie']] . ';"></i></div>';
+              echo '<h4 class="title"><a href="' . $row['url'] . '">' . $row['titre'] . '</a></h4>';
+              echo '<p class="description">' . $row['description'] . '</p>';
+              echo '</div>';
+              echo '</div>';
+          }
+          ?>
+        </div>
+      </div>
+    </section><!-- End Services Section -->
